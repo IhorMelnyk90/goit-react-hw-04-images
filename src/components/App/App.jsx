@@ -2,7 +2,7 @@ import { useState, useEffect} from 'react';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { animateScroll as scroll } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll';
 
 import Loader from 'components/Loader';
 import Api from 'components/fetchImages';
@@ -55,6 +55,8 @@ export default function App() {
         fetchImages(name, page);                        
         }, [name, page]);
   
+  useEffect(() => {scrollToBottom()}, [images]);
+  
   
 
     const onSubmit = name => {
@@ -68,9 +70,9 @@ export default function App() {
         setPage(prevPage => prevPage + 1);
     };
 
-//     const scrollToBottom = () => {
-//         scroll.scrollToBottom();
-//     };
+    const scrollToBottom = () => {
+        scroll.scrollToBottom();
+    };
 
     const closeModal = () => {
         setShowModal(false);
