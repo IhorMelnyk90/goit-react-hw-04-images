@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect,} from 'react';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -49,11 +49,13 @@ export default function App() {
             } 
         };
         if (!name) {
-            setImages([]);
-            fetchImages(name, page);
-            return;}
-                        
+            setImages([]);            
+            return;
+        }
+        fetchImages(name, page);                        
         }, [name, page]);
+  
+  
 
     const onSubmit = name => {
         setName(name);
@@ -66,9 +68,9 @@ export default function App() {
         setPage(prevPage => prevPage + 1);
     };
 
-    const scrollToBottom = () => {
-        scroll.scrollToBottom();
-    };
+//     const scrollToBottom = () => {
+//         scroll.scrollToBottom();
+//     };
 
     const closeModal = () => {
         setShowModal(false);
@@ -77,15 +79,7 @@ export default function App() {
     const onClickImage = event => {
         setShowModal(true);
         setLargeImage(event);
-    };
-
-    function usePrevious(value) {
-        const ref = useRef();
-        useEffect(() => {
-            ref.current = value;
-        });
-        return ref.current;
-    }
+    };    
 
     return (
         <AppDiv>
