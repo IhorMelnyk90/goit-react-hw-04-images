@@ -54,18 +54,10 @@ export default function App() {
             setImages([]);
             return;
         }
-        if (page > prevPage) {
-            fetchImages(name, page);
-            scrollToBottom();
-            return;
-        }
-        if (name !== prevName && page === prevPage) {
-            fetchImages(name, 1);
-            setPage(1);
-            return;  
+        
       
         }
-    }, [name, page, prevName, prevPage]);
+    }, [name, page]);
 
     const onSubmit = name => {
         setName(name);
