@@ -53,11 +53,8 @@ export default function App() {
         if (!name) {
             setImages([]);
             return;
-        }
-        
-      
-        }
-    }, [name, page]);
+        }            
+        }, [name, page]);
 
     const onSubmit = name => {
         setName(name);
