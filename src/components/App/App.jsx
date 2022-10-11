@@ -50,9 +50,9 @@ export default function App() {
         };
         if (!name) {
             setImages([]);
-            return;
-        } 
-        fetchImages(name, page);         
+            fetchImages(name, page);
+            return;}
+                        
         }, [name, page]);
 
     const onSubmit = name => {
