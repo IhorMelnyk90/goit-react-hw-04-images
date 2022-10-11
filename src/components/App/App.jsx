@@ -1,8 +1,8 @@
-import { useState, useEffect,} from 'react';
+import { useState, useEffect} from 'react';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { animateScroll as scroll } from 'react-scroll';
+// import { animateScroll as scroll } from 'react-scroll';
 
 import Loader from 'components/Loader';
 import Api from 'components/fetchImages';
