@@ -59,14 +59,10 @@ export default function App() {
             scrollToBottom();
             return;
         }
-//         if (name !== prevName && page === prevPage) {
-//             fetchImages(name, 1);
-//             setPage(1);
-//             return;
-       if (name !== prevName) {
+        if (name !== prevName && page === prevPage) {
             fetchImages(name, 1);
             setPage(1);
-            return;
+            return;  
       
         }
     }, [name, page, prevName, prevPage]);
@@ -75,6 +71,7 @@ export default function App() {
         setName(name);
         setImages([]);
         setPage(1);
+        setTotal(0);
     };
 
     const onClickButton = () => {
