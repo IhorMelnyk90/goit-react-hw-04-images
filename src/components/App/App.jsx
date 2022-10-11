@@ -59,10 +59,15 @@ export default function App() {
             scrollToBottom();
             return;
         }
-        if (name !== prevName && page === prevPage) {
+//         if (name !== prevName && page === prevPage) {
+//             fetchImages(name, 1);
+//             setPage(1);
+//             return;
+       if (name !== prevName) {
             fetchImages(name, 1);
             setPage(1);
             return;
+      
         }
     }, [name, page, prevName, prevPage]);
 
