@@ -22,9 +22,7 @@ export default function App() {
     const [status, setStatus] = useState('idle');
     const [largeImage, setLargeImage] = useState('');
     const [total, setTotal] = useState(0);
-
-    const prevPage = usePrevious(page);
-    const prevName = usePrevious(name);
+  
 
     useEffect(() => {
         const fetchImages = async (name, page) => {
@@ -53,7 +51,8 @@ export default function App() {
         if (!name) {
             setImages([]);
             return;
-        }            
+        } 
+        fetchImages(name, page);         
         }, [name, page]);
 
     const onSubmit = name => {
